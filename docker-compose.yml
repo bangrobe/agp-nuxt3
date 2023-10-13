@@ -1,0 +1,11 @@
+version: "3"
+services:
+  my-app:
+    build:
+      context: .
+    restart: always
+    container_name: agirlpic-nuxt3
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env

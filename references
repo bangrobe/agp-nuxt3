@@ -1,0 +1,50 @@
+https://stackoverflow.com/questions/70841647/rest-api-wordpress-5-8-sidebars-and-widgets
+https://codepen.io/abhisheksarmah/pen/GRJyXpG
+
+https://masteringnuxt.com/blog/dynamic-pages-in-nuxt-3
+https://masteringnuxt.com/blog/24-time-saving-tips-for-nuxt3
++ Su dung Lazy với các component cần load sau (ví dụ modal)
++ Sử dụng pre-render với một số route
++ Sử dụng useStorage với một số lưu trữ kiểu key:value
++ sử dụng NuxtErrorBoundary để handle lỗi
++ Nested Routes (aka Child Routes): dùng component <NuxtPage /> ở các trang con
++ /assets vs. /public khi nào cần sử dụng?: /assets/ mang tính "động", thay đổi thường xuyên hơn public. Có thể dùng với v-bind
++ Ví dụ assets: ảnh, stylesheet, font, icons
++ Khi lấy file từ /public mà ko có thì ko báo lỗi. /assets thì có. /assets build vào bundle.
++ Ví dụ public: favicon, sitemap, robots.txt
++ NuxtLink có thể thiết lập lại được với defineNuxtLink
++ Tắt prefetch của NuxtLink: :prefetch="false hoặc no-prefetch
++ Có thể nén ảnh với VSharp. Ảnh nén khi nằm trong thư mục /assets
++ Caching đơn giản với useFetch (xem bài https://masteringnuxt.com/blog/writing-a-cache-composable-in-nuxt-3)
+
+runtimeConfig vs. appConfig, khi nào cần sử dụng : Xem bài, phần 22
++ runtimeConfig: private token,thông tin nhạy cảm (token, key)
++ appConfig: Thông tin có thể hiển thị public (thiết lập giao diện, màu sắc)
+
+runtimeConfig các biết private và public có thể được truy cập ở server route. Các biến private không thể truy cập ở client
+Như vậy khi cần thực hiện các thao tác truy cập cần token có thể tạo route ở server, sau đó gọi qua client
+
+Server Components
+https://roe.dev/blog/nuxt-server-components
+
+
+https://stackoverflow.com/questions/73108825/how-to-use-suspense-in-nuxtjs-properly
+https://beginnersoftwaredeveloper.com/completed-guide-vue-suspense-with-vue-suspense-examples/
+
+Update query string to refresh data
+https://serversideup.net/dynamic-api-requests-with-nuxt-3/
+
+Pagination va infinity scrolling
+https://serversideup.net/advanced-data-fetching-with-nuxt-3/
+https://vueuse.org/core/useElementVisibility/
+
+
+https://www.reddit.com/r/Nuxt/comments/13vh35t/fixing_hydration_node_mismatch/
+
+The useAsyncData composable is a great way to wrap and wait for multiple useFetch to be done, and then retrieve the results of each.
+https://nuxt.com/docs/getting-started/data-fetching
+https://stackoverflow.com/questions/75478233/nuxt-3-useasyncdata-access-previous-value-with-refresh-method
+
+
+Post Infinite scrolling
+https://learnvue.co/articles/vue-infinite-scrolling

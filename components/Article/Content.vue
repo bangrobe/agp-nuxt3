@@ -1,0 +1,36 @@
+<template>
+    <div class="article-content">
+            <div class="top-article my-4 py-4">
+                <figure class="w-full" v-if="content?.image_url">
+                    <img :src="content?.image_url" :alt="content.title" class="w-full h-[300px] object-cover" />
+                </figure>
+                <h1 class="text-center text-5xl my-4">
+                    {{ content.title }}
+                </h1>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <USkeleton class="h-4 w-full" v-if="!content.post_content" />
+                <div v-else>
+                    <ElementImageCanvas :images="images" />
+                </div>
+                <!-- <Editor :content="content.post_content" v-else /> -->
+            </div>
+
+            <div class="meta-article py-4">
+
+            </div>
+            <div class="related-articles py-4">
+
+            </div>
+        </div>
+</template>
+<script setup>
+const props = defineProps({
+    content: {
+        type: Object,
+        required: true
+    }
+})
+props.content.post_content = removeHTMLCommentAndBlankLines(props.content.post_content);
+const images = getAllImageUrls(props.content.post_content);
+</script>
