@@ -6,6 +6,12 @@ services:
     restart: always
     container_name: agirlpic-nuxt3
     ports:
-      - "3000:3000"
+      - "3000"
     env_file:
       - .env
+    networks:
+      - nginxproxyman
+networks:
+  nginxproxyman:
+    external: true
+      
