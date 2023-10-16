@@ -24,7 +24,7 @@ RUN npm prune
 FROM base
 
 ENV PORT=$PORT
-ENV HOST=0.0.0.0
+# ENV HOST=0.0.0.0
 COPY --from=build /src/.output /src/.output
 COPY --from=build /src/nuxt.config.ts /src/
 COPY --from=build /src/.env /src/
