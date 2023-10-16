@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/ui", "@pinia/nuxt", 'vue3-carousel-nuxt', "@nuxtseo/module",'@vueuse/nuxt','nuxt-simple-sitemap'],
+  modules: ["@nuxt/ui", "@pinia/nuxt", 'vue3-carousel-nuxt', "@nuxtseo/module",'@vueuse/nuxt','nuxt-simple-sitemap', '@nuxt/image'],
   site: {
     url: 'https://agirlpic.com',
     name: 'Agirlpic Collection',
@@ -39,6 +39,14 @@ export default defineNuxtConfig({
   routeRules: {
     '/proxy/**': {
       proxy: `${process.env.API_URL}/**`
+    }
+  },
+  // Nuxt Image
+  image: {
+    domains: ['api.agirlpic.com','blogger.googleusercontent.com'],
+    alias: {
+      default: 'https://api.agirlpic.com',
+      google: 'https://blogger.googleusercontent.com',
     }
   },
 });

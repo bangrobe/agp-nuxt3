@@ -4,7 +4,7 @@
             <USkeleton class="h-4 w-full" v-for="i in 6" :key="i" />
         </div>
         <div v-for="image in data" :key="image" v-else>
-            <img :src="image" class="article-image">
+            <NuxtImg :src="image" class="article-image" loading="lazy"/>
         </div>
         <button ref="target">Load More</button>
     </div>

@@ -25,5 +25,4 @@ const { data, error, pending, refresh } = await useAsyncData('latest-categories'
         response,
     }
 })
-
 </script>

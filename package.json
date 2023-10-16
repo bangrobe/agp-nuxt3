@@ -17,6 +17,7 @@
     "nuxt-simple-sitemap": "^3.4.0"
   },
   "dependencies": {
+    "@nuxt/image": "^1.0.0-rc.3",
     "@nuxt/ui": "^2.8.1",
     "@pinia/nuxt": "^0.4.11",
     "nuxt": "^3.7.3",
