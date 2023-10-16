@@ -36,6 +36,7 @@ export default defineNuxtConfig({
     renderJsonPayloads: false
   },
   //Server proxy
+  //https://github.com/nuxt/nuxt/issues/19325#issuecomment-1744853526
   routeRules: {
     '/proxy/**': {
       proxy: `${process.env.API_URL}/**`

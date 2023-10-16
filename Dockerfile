@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:1
-ARG NODE_VERSION=18.14.2
+ARG NODE_VERSION=20.8
 
 FROM node:${NODE_VERSION}-slim as base
 
@@ -24,7 +24,7 @@ RUN npm prune
 FROM base
 
 ENV PORT=$PORT
-
+ENV HOST=0.0.0.0
 COPY --from=build /src/.output /src/.output
 COPY --from=build /src/nuxt.config.ts /src/
 COPY --from=build /src/.env /src/
