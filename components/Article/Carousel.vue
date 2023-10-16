@@ -1,5 +1,5 @@
 <template>
-    <Carousel :autoplay="2000" :wrap-around="true">
+    <Carousel :autoplay="3000" :wrap-around="true" :itemsToScroll="1" pauseAutoplayOnHover="true" ref="myCarousel" v-if="related_posts">
         <Slide v-for="post in related_posts" :key="post.id">
             <div class="carousel__item">
                 <BlogSmallCard :article="post" />
@@ -11,11 +11,17 @@
 <script setup>
 import { Carousel, Navigation, Slide } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
+const myCarousel = ref(null)
 const props = defineProps({
     related_posts: {
         type: Array,
         required: true
     }
+})
+
+const route = useRoute();
+watch(() => route.path, () => {
+    myCarousel.value.updateSlidesData();
 })
 </script>
   

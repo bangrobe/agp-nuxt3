@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/ui", "@pinia/nuxt", 'vue3-carousel-nuxt', "@nuxtseo/module",'@vueuse/nuxt',],
+  modules: ["@nuxt/ui", "@pinia/nuxt", 'vue3-carousel-nuxt', "@nuxtseo/module",'@vueuse/nuxt','nuxt-simple-sitemap'],
   site: {
     url: 'https://agirlpic.com',
     name: 'Agirlpic Collection',
