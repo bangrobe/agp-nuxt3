@@ -1,5 +1,5 @@
 <template>
-    <Carousel :autoplay="3000" :wrap-around="true" :itemsToScroll="1" pauseAutoplayOnHover="true" ref="myCarousel" v-if="related_posts">
+    <Carousel :autoplay="3000" :wrap-around="true" :itemsToScroll="1" pauseAutoplayOnHover ref="myCarousel" v-if="related_posts">
         <Slide v-for="post in related_posts" :key="post.id">
             <div class="carousel__item">
                 <BlogSmallCard :article="post" />

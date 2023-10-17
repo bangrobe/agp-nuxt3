@@ -15,3 +15,8 @@ services:
     volumes:
       - .:/src
       - node_modules:/src/node_modules
+    networks:
+      - nginxproxyman
+networks:
+  nginxproxyman:
+    external: true

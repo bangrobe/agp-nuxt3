@@ -5,6 +5,7 @@
         </div>
         <div v-for="image in data" :key="image" v-else>
             <NuxtImg :src="image" class="article-image" loading="lazy"/>
+            <!-- <img :src="image" class="article-image" loading="lazy"> -->
         </div>
         <button ref="target">Load More</button>
     </div>
