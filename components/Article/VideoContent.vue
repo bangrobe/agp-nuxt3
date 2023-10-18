@@ -2,7 +2,6 @@ import { UCard } from '../../.nuxt/components';
 <template>
     <div class="article-content">
         <div class="top-article my-4 py-4">
-
             <h1 class="text-center text-5xl my-4">
                 {{ content.title }}
             </h1>
@@ -15,13 +14,6 @@ import { UCard } from '../../.nuxt/components';
                     </UCard>
                 </template>
             </UTabs>
-        </div>
-
-        <div class="meta-article py-4">
-
-        </div>
-        <div class="related-articles py-4">
-
         </div>
     </div>
 </template>
@@ -36,12 +28,12 @@ const props = defineProps({
 const tabsData = [{
     key: 'source_one',
     label: 'Source #1',
-    url: props.content.custom_fields?.source_one
+    url: props.content?.custom_fields?.source_one
 },
 {
     key: 'source_two',
     label: 'Source #2',
-    url: props.content.custom_fields?.source_two
+    url: props.content?.custom_fields?.source_two
 },
 ]
 

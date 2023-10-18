@@ -2,7 +2,7 @@
     <Carousel :autoplay="3000" :wrap-around="true" :itemsToScroll="1" pauseAutoplayOnHover ref="myCarousel" v-if="related_posts">
         <Slide v-for="post in related_posts" :key="post.id">
             <div class="carousel__item">
-                <BlogSmallCard :article="post" />
+                <BlogSmallCard :article="post" :type="type" />
             </div>
         </Slide>
     </Carousel>
@@ -16,13 +16,16 @@ const props = defineProps({
     related_posts: {
         type: Array,
         required: true
+    }, 
+    type: {
+        type: String,
     }
 })
 
 const route = useRoute();
-watch(() => route.path, () => {
-    myCarousel.value.updateSlidesData();
-})
+// watch(() => route.path, () => {
+//     myCarousel.value.updateSlidesData();
+// })
 </script>
   
 <style>

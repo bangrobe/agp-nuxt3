@@ -11,8 +11,8 @@
         <div class="max-w-3xl mx-auto">
             <USkeleton class="h-4 w-full" v-if="!content.post_content" />
             <div v-else>
-                <ElementImageCanvas :images="imagesFromDom" />
-                <!-- <div v-html="content.post_content"></div> -->
+                <!-- <ElementImageCanvas :images="imagesFromDom" /> -->
+                <div v-html="content.post_content"></div>
             </div>
             <!-- <Editor :content="content.post_content" v-else /> -->
         </div>

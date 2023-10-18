@@ -63,7 +63,7 @@ useSeoMeta({
     ogImage: content.value.image_url.length !== 0 ? content.value.image_url : null,
 })
 </script>
-<style scoped>
+<style>
 .related-posts-wrapper .carousel {
     width: 100%;
 }
