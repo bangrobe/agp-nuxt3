@@ -14,6 +14,9 @@
                     </div>
                 </div>
             </transition>
+            <pre>
+                {{ data }}
+            </pre>
         </main>
     </div>
 </template>
@@ -62,6 +65,9 @@ useSeoMeta({
     description: content.value.post_content.length !== 0 ? excerpt.value : 'Watching more beauty girls at agirlpic.com',
     ogImage: content.value.image_url.length !== 0 ? content.value.image_url : null,
 })
+
+// Test server routes
+// const { data } = await useAsyncData(`server-${route.params.article}`, () => $fetch(`/api/${route.params.article}`));
 </script>
 <style>
 .related-posts-wrapper .carousel {

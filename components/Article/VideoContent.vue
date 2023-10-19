@@ -36,5 +36,4 @@ const tabsData = [{
     url: props.content?.custom_fields?.source_two
 },
 ]
-
 </script>

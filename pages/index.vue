@@ -25,4 +25,6 @@ const { data, error, pending, refresh } = await useAsyncData('latest-categories'
         response,
     }
 })
+
+const { data: hello} = await useFetch('/api/hello');
 </script>
