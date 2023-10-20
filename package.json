@@ -17,12 +17,12 @@
     "nuxt-simple-sitemap": "^3.4.0"
   },
   "dependencies": {
-    "@nuxt/image": "^1.0.0-rc.3",
-    "@nuxt/ui": "^2.8.1",
-    "@pinia/nuxt": "^0.4.11",
+    "@nuxt/image": "^1.0.0",
+    "@nuxt/ui": "^2.9.0",
+    "@pinia/nuxt": "^0.5.1",
     "jsdom": "^22.1.0",
-    "nuxt": "^3.7.3",
-    "pinia": "^2.1.6",
+    "nuxt": "^3.8.0",
+    "pinia": "^2.1.7",
     "vue3-carousel-nuxt": "^1.1.0"
   }
 }
