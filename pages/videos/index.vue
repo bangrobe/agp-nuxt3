@@ -26,9 +26,9 @@
   </div>
 </template>
 <script setup>
+
 const page_size = 12;
 const page_no = ref(1);
-const route = useRoute();
 const isPending= ref(false);
 const posts_data = reactive({
   posts: [],
@@ -42,14 +42,14 @@ const posts_data = reactive({
 const fetchData = async () => {
   isPending.value = true;
   const { data: articles} = await useFetchApi(`wp/v1/latest-posts?page_size=${page_size}&page_no=${page_no.value}&cat_slug=videos`);
-  if (articles.value && posts_data.posts.length === 0) {
+  if (articles.value && posts_data?.posts?.length === 0) {
       Object.assign(posts_data, articles.value);
       posts_data.max_page = Math.ceil(articles.value.num_posts / page_size);
       isPending.value = false;
       return;
 
   }
-  if (posts_data.posts.length > 0) {
+  if (posts_data?.posts?.length > 0) {
       posts_data.posts.push(...articles.value.posts);
       isPending.value = false;
       return;

@@ -11,10 +11,11 @@
     </div>
 </template>
 <script setup>
+const config = useRuntimeConfig();
 const { $categories } = useNuxtApp();
 const { data, error, pending, refresh } = await useAsyncData('latest-categories', async () => {
     const response = await Promise.all($categories.map(async (category) => {
-        const categoryData = await $fetch(`/proxy/wp/v1/latest-posts?cat_slug=${category.slug}&page_size=6`);
+        const categoryData = await $fetch(`${config.public.apiUrl}/wp/v1/latest-posts?cat_slug=${category.slug}&page_size=6`);
         const categorySlug = category.slug;
         return {
             categoryData: categoryData,
@@ -25,6 +26,4 @@ const { data, error, pending, refresh } = await useAsyncData('latest-categories'
         response,
     }
 })
-
-const { data: hello} = await useFetch('/api/hello');
 </script>

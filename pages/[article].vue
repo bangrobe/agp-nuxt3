@@ -14,9 +14,6 @@
                     </div>
                 </div>
             </transition>
-            <pre>
-                {{ data }}
-            </pre>
         </main>
     </div>
 </template>
@@ -26,15 +23,14 @@ const excerpt = ref('');
 // const related_posts = ref();
 const relatedPostsVisible = ref(false);
 const bigRelatedPostsVisible = ref(true);
-
-const { data: content } = await useFetch(`/proxy/wp/v1/post-details-by-slug?slug=${route.params.article}`);
+const { data: content } = await useFetchApi(`wp/v1/post-details-by-slug?slug=${route.params.article}`);
 if (content.value.post_content?.length !== 0) {
     excerpt.value = removeTags(content.value?.post_content).substring(0, 150).trim();
 }
 
 // if (content.value?.id) {
 // const response = await $fetch(`/proxy/wp/v1/related-posts/${content.value.id}`); OK
-const { data: related_posts } = await useFetch(`/proxy/wp/v1/related-posts/${content.value.id}`);
+const { data: related_posts } = await useFetchApi(`wp/v1/related-posts/${content.value.id}`);
 const toggleRelatedPostsVisibility = () => {
     relatedPostsVisible.value = !relatedPostsVisible.value;
 

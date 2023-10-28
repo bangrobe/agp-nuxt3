@@ -6,7 +6,7 @@
                     <span class="sr-only">Home</span>
                     <ElementLogo class="h-[100px] w-full"/>
                 </NuxtLink>
-                <div v-if="$navigations.length === 0"></div>
+                <div v-if="$navigations?.length === 0"></div>
                 <div class="flex flex-1 items-center justify-end md:justify-between" v-else>
                     <nav aria-label="Global" class="hidden md:block">
                         <ul class="flex items-center gap-6 text-sm">

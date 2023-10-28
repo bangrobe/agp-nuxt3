@@ -37,11 +37,11 @@ export default defineNuxtConfig({
   },
   //Server proxy
   //https://github.com/nuxt/nuxt/issues/19325#issuecomment-1744853526
-  routeRules: {
-    '/proxy/**': {
-      proxy: `${process.env.API_URL}/**`
-    }
-  },
+  // routeRules: {
+  //   '/proxy/**': {
+  //     proxy: `${process.env.API_URL}/**`
+  //   }
+  // },
   // Nuxt Image
   image: {
     domains: ['api.agirlpic.com','blogger.googleusercontent.com'],

@@ -18,11 +18,12 @@
 <script setup>
 const route = useRoute();
 const excerpt = ref('');
+const config = useRuntimeConfig();
 // const related_posts = ref();
 const relatedPostsVisible = ref(false);
 const bigRelatedPostsVisible = ref(true);
-const { data:content, error, pending } = await useAsyncData(`${route.params.slug}`, () => $fetch(`/proxy/wp/v1/post-details-by-slug?slug=${route.params.slug}`));
-const { data: related_posts } = await useFetch(`/proxy/wp/v1/related-posts/${content.value.id}`);
+const { data:content, error, pending } = await useAsyncData(`${route.params.slug}`, () => $fetch(`${config.public.apiUrl}/wp/v1/post-details-by-slug?slug=${route.params.slug}`));
+const { data: related_posts } = await useFetch(`${config.public.apiUrl}/wp/v1/related-posts/${content.value.id}`);
 
 const toggleRelatedPostsVisibility = () => {
     relatedPostsVisible.value = !relatedPostsVisible.value;

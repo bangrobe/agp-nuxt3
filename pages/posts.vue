@@ -27,7 +27,7 @@ const config = useRuntimeConfig();
 const page_no = ref(1);
 const { data: articles, refresh } = useAsyncData('latest-articles', async () => {
     // const { data:response } = await useFetchApi(`wp/v1/latest-posts?page_size=12&exclude_cats=46`);
-    const response = await $fetch(`/proxy/wp/v1/latest-posts?page_size=12&page_no=${page_no.value}&exclude_cats=46`);
+    const response = await $fetch(`${config.public.apiUrl}/wp/v1/latest-posts?page_size=12&page_no=${page_no.value}&exclude_cats=46`);
     if (response) {
         return {
             num_posts: response.num_posts,
